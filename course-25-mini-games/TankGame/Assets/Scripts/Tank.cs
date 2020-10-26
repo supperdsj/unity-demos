@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Tank : MonoBehaviour
@@ -49,6 +50,14 @@ public class Tank : MonoBehaviour
             score++;
             scoreText.text = score.ToString();
             // Destroy(gameObject);
+            Invoke(nameof(Restart),2f);
+            // Restart();
         }
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene("Game");
+        score = 0;
     }
 }
