@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class Tank : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float xInput;
     private SpriteRenderer sprite;
+    private int score = 0;
     public float speed = 5f;
+    public Text scoreText;
 
     private void Awake()
     {
@@ -42,8 +45,10 @@ public class Tank : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            score++;
+            scoreText.text = score.ToString();
+            // Destroy(gameObject);
         }
     }
 }
