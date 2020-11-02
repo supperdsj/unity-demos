@@ -7,3 +7,4 @@
     * TankGame
 * [course-25-mini-games-2](https://www.udemy.com/course/unity-game-development-by-example/learn/lecture/12426762#overview) 
     * AI Game
+    * ZigZag
